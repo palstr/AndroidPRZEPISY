@@ -3,7 +3,7 @@ package com.example.mobilnethepowrot;
 import java.util.ArrayList;
 
 public class Repozytorium {
-    public Przepis[] wszystkiePrzepisy = new Przepis[]{
+    public static final Przepis[] wszystkiePrzepisy = new Przepis[]{
         new Przepis("sernik",
                 "ciasta",
                 R.drawable.sernik,
@@ -12,7 +12,7 @@ public class Repozytorium {
                 "wszystko zmieszać, piec godzinę"),
 
                 new Przepis("muffinka",
-                        "ciasta",
+                        "ciastka",
                         R.drawable.muffin,
                         30,
                         new String[]{"mąka", "kakao", "mleko", "masło"},
@@ -33,6 +33,18 @@ public class Repozytorium {
                         "zrobić warstwy i upiec")
 
     };
+
+    public static ArrayList<Przepis> przepisyZKategorii(String kategoria){
+        ArrayList<Przepis> przepisy = new ArrayList<>();
+        for (Przepis przepis:
+             wszystkiePrzepisy) {
+            if(przepis.getKategoria().equals(kategoria)){
+                przepisy.add(przepis);
+            }
+        }
+
+        return przepisy;
+    }
 
 
 
